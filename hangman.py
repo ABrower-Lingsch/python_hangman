@@ -47,3 +47,17 @@ def play(word):
             print("Not a valid guess.")
         print(word_completion)
         print("\n")
+    if guessed:
+        print("Great job! You guessed the word!")
+    else:
+        print("You ran out of tries. The word was ", word, ". Good luck next time!")
+
+def main():
+    word = get_word()
+    play(word)
+    while input("Play again? (Y/N)").upper() == "Y":
+        word = get_word()
+        play(word)
+
+if __name__ == "__main__":
+    main()
