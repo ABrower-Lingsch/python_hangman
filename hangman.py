@@ -47,6 +47,7 @@ def play(word):
             print("Not a valid guess.")
         print(word_completion)
         print("\n")
+        print(tries, "tries left.")
     if guessed:
         print("Great job! You guessed the word!")
     else:
