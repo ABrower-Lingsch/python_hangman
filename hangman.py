@@ -16,6 +16,7 @@ def play(word):
     print("\n")
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word:  ").upper()
+        print("Already Guessed: ", " ".join(guessed_letters))
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
@@ -47,7 +48,10 @@ def play(word):
             print("Not a valid guess.")
         print(word_completion)
         print("\n")
-        print(tries, "tries left.")
+        if tries == 1:
+            print(tries, "try left.")
+        else:
+            print(tries, "tries left.")
     if guessed:
         print("Great job! You guessed the word!")
     else:
